@@ -2,8 +2,11 @@ const express = require("express")
 const app = express()
 const morgan = require("morgan")
 const mongoose = require("mongoose")
-const path = require('path')
+const dotenv = require("dotenv").config()
 const port = process.env.PORT || 9000
+
+
+const path = require('path')
 
 app.use(morgan("dev"))
 app.use("/journal", require("./routes/entrysRouter.js"))
@@ -22,6 +25,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/journalsd
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 })
-app.listen(9000, () => {
+app.listen(port, () => {
     console.log("Running on server 9000")
 })
