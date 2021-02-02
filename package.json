@@ -1,0 +1,21 @@
+{
+  "name": "Journal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },"engines": {
+    "node": "15.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
